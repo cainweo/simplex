@@ -1,0 +1,28 @@
+{% extends 'partials/base.html' %}
+{% block title %} DELETE Page{% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+    <div class="row mt-5"></div>
+        <div class="col-md-6 offset-md-3">
+            <div class="border bg-white p-3">
+                <h3> SUPPRIMER OUTILS </h3>
+                <div class="hr">
+                <hr>
+                <div class="alert alert-danger">
+                    <h4>Vous etes sur de vouloir supprimer l'outil ?</h4>
+                </div>
+                <form method="POST">
+                    {% csrf_token%}
+                    {{ form }} 
+                    <a class ="btn btn-secondary" href="{% url 'dashboard-products' %}">Annuler la suppression</a> 
+
+                    <input class="btn btn-danger" type="submit">
+                </form>  
+            </div>
+
+        </div>
+</div>
+{% endblock %}
